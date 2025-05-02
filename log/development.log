@@ -1,0 +1,591 @@
+  [1m[35m (100.3ms)[0m  [1m[35mCREATE DATABASE "check_sku_development" ENCODING = 'unicode'[0m
+  [1m[35m (47.8ms)[0m  [1m[35mCREATE DATABASE "check_sku_test" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "check_sku_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "check_sku_test" ENCODING = 'unicode'[0m
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-05-02 13:20:44.028862', '2025-05-02 13:20:44.028864') RETURNING "key"[0m
+Migrating to CreateOrders (20250502131949)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateOrders (20250502131949)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "external_id" character varying, "locked_at" character varying, "datetime" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250502131949') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateOrders (20250502131949)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.1ms)[0m  [1m[35mDROP TABLE "orders"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20250502131949'[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateOrders (20250502131949)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateOrders (20250502131949)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" bigserial primary key, "external_id" character varying, "locked_at" character varying, "datetime" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_orders_on_external_id" ON "orders" ("external_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250502131949') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateLineItems (20250502132601)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "line_items" ("id" bigserial primary key, "sku" character varying, "quantity" integer, "original" boolean DEFAULT TRUE, "order_id" bigint, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_2dc2e5c22c"
+FOREIGN KEY ("order_id")
+  REFERENCES "orders" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_line_items_on_order_id" ON "line_items" ("order_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250502132601') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateSkuStats (20250502133152)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "sku_stats" ("id" bigserial primary key, "sku" character varying, "week" character varying, "total_quantity" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250502133152') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+2025-05-02T19:06:39+0530: [Worker(host:kreetidevs-Air.lan pid:61500)] Starting job worker
+2025-05-02T19:06:39+0530: [Worker(host:kreetidevs-Air.lan pid:61500)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:06:44+0530: [Worker(host:kreetidevs-Air.lan pid:61500)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:06:49+0530: [Worker(host:kreetidevs-Air.lan pid:61500)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:06:52+0530: [Worker(host:kreetidevs-Air.lan pid:61500)] Exiting...
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+2025-05-02T19:08:46+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Starting job worker
+2025-05-02T19:08:46+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:08:51+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:08:56+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:09:01+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:09:06+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:09:11+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:09:16+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:09:21+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:09:26+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+2025-05-02T19:09:31+0530: [Worker(delayed_job host:kreetidevs-Air.lan pid:84790)] Error while reserving job: PG::UndefinedTable: ERROR:  relation "delayed_jobs" does not exist
+LINE 10:  WHERE a.attrelid = '"delayed_jobs"'::regclass
+                             ^
+
+#<ActiveRecord::StatementInvalid:"PG::UndefinedTable: ERROR:  relation \"delayed_jobs\" does not exist\nLINE 10:  WHERE a.attrelid = '\"delayed_jobs\"'::regclass\n                             ^\n">
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to CreateDelayedJobs (20250502134220)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE TABLE "delayed_jobs" ("id" bigserial primary key, "priority" integer DEFAULT 0 NOT NULL, "attempts" integer DEFAULT 0 NOT NULL, "handler" text NOT NULL, "last_error" text, "run_at" timestamp(6), "locked_at" timestamp(6), "failed_at" timestamp(6), "locked_by" character varying, "queue" character varying, "created_at" timestamp(6), "updated_at" timestamp(6))[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "delayed_jobs_priority" ON "delayed_jobs" ("priority", "run_at")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250502134220') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+2025-05-02T19:12:50+0530: [Worker(host:kreetidevs-Air.lan pid:88629)] Starting job worker
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (3.0ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:42:50.631375', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:42:50.594907' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:42:50.594924')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.9ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:42:55.667505', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:42:55.660566' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:42:55.660576')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:00.699918', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:00.699519' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:00.699534')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:05.727032', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:05.726676' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:05.726696')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (1.2ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:10.745929', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:10.745692' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:10.745706')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:15.763929', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:15.763679' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:15.763688')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:20.789810', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:20.789443' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:20.789459')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:25.811615', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:25.811205' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:25.811222')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:30.839146', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:30.838936' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:30.838946')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:35.865913', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:35.865483' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:35.865499')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:40.890806', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:40.890423' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:40.890437')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:45.921256', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:45.920995' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:45.921006')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:50.950675', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:50.950265' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:50.950280')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:43:55.981292', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:43:55.980922' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:43:55.980933')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:01.012270', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:01.011931' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:01.011945')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:06.041022', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:06.040600' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:06.040613')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:11.069962', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:11.069707' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:11.069718')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.6ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:16.097822', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:16.097457' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:16.097469')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:21.126450', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:21.126235' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:21.126244')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.5ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:26.145651', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:26.145443' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:26.145452')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:31.161482', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:31.161271' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:31.161281')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+  [1m[36mDelayed::Backend::ActiveRecord::Job Load (0.7ms)[0m  [1m[37mUPDATE "delayed_jobs" SET locked_at = '2025-05-02 13:44:36.189971', locked_by = 'host:kreetidevs-Air.lan pid:88629' WHERE id IN (SELECT "delayed_jobs"."id" FROM "delayed_jobs" WHERE (((run_at <= '2025-05-02 13:44:36.189586' AND (locked_at IS NULL OR locked_at < '2025-05-02 09:44:36.189602')) OR locked_by = 'host:kreetidevs-Air.lan pid:88629') AND failed_at IS NULL) ORDER BY priority ASC, run_at ASC LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *[0m
+2025-05-02T19:14:39+0530: [Worker(host:kreetidevs-Air.lan pid:88629)] Exiting...
+  [1m[36mDelayed::Backend::ActiveRecord::Job Update All (0.3ms)[0m  [1m[33mUPDATE "delayed_jobs" SET "locked_by" = $1, "locked_at" = $2 WHERE "delayed_jobs"."locked_by" = $3[0m  [["locked_by", nil], ["locked_at", nil], ["locked_by", "host:kreetidevs-Air.lan pid:88629"]]
+Started GET "/users/sign_up" for ::1 at 2025-05-02 19:15:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/service-worker.js" for ::1 at 2025-05-02 19:15:03 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started GET "/" for ::1 at 2025-05-02 19:15:04 +0530
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kreetidev/.asdf/installs/ruby/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kreetidev/.asdf/installs/ruby/3.2.0/lib/ruby/gems/3.2.0/gems/railties-7.1.5.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 272)
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 2541)
+
+
+Started GET "/service-worker.js" for ::1 at 2025-05-02 19:15:06 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/service-worker.js"):
+  
+Started POST "/orders" for ::1 at 2025-05-02 19:25:45 +0530
+Processing by OrdersController#index as */*
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 183)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:30:42 +0530
+Processing by OrdersController#index as */*
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 217)
+
+
+  
+NoMethodError (undefined method `json' for #<OrdersController:0x0000000000ea38>):
+  
+app/controllers/orders_controller.rb:5:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 19:31:04 +0530
+Processing by OrdersController#index as */*
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 160)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:31:21 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+[31mUnpermitted parameters: :line_items, :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001116d2448>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234"}} }[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 6.9ms | Allocations: 257)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:32:00 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 2.8ms | Allocations: 145)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1..2)):
+  
+app/controllers/orders_controller.rb:10:in `[]'
+app/controllers/orders_controller.rb:10:in `order_params'
+app/controllers/orders_controller.rb:3:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 19:32:50 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+[31mUnpermitted parameters: :line_items, :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011175bcc0>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234"}} }[0m
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 324)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:34:28 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001112467d0>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234"}} }[0m
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 403)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:36:19 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000110e5ab58>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234"}} }[0m
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 2.6ms | Allocations: 411)
+
+
+  
+NoMethodError (undefined method `external_id' for #<ActionController::Parameters {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[#<ActionController::Parameters {"sku"=>"SKU123", "quantity"=>10} permitted: true>, #<ActionController::Parameters {"sku"=>"SKU456", "quantity"=>5} permitted: true>]} permitted: true>):
+  
+app/controllers/orders_controller.rb:3:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 19:36:43 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000110e5f978>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234"}} }[0m
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 2.5ms | Allocations: 371)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:38:58 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000110a550a8>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234"}} }[0m
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 404 Not Found in 10ms (ActiveRecord: 7.0ms | Allocations: 2828)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=SAP-ORDER-1234):
+  
+app/controllers/orders_controller.rb:4:in `index'
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddColumnToOrderModel (20250502141214)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddColumnToOrderModel (20250502141214)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "placed_at" ADD "orders" timestamp(6)[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddColumnToOrderModel (20250502141214)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "orders" ADD "placed_at" timestamp(6)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250502141214') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mOrder Create (2.8ms)[0m  [1m[32mINSERT INTO "orders" ("external_id", "locked_at", "datetime", "created_at", "updated_at", "placed_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["external_id", "SAP-ORDER-1234"], ["locked_at", nil], ["datetime", nil], ["created_at", "2025-05-02 14:15:02.985407"], ["updated_at", "2025-05-02 14:15:02.985407"], ["placed_at", "2025-04-17 12:00:00"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/orders" for ::1 at 2025-05-02 19:45:11 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001113296c0>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234"}} }[0m
+  [1m[36mOrder Load (0.8ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 404 Not Found in 4ms (ActiveRecord: 3.3ms | Allocations: 1092)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=SAP-ORDER-1234):
+  
+app/controllers/orders_controller.rb:4:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 19:45:25 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001101ff160>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 404 Not Found in 18ms (ActiveRecord: 7.6ms | Allocations: 5179)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=SAP-ORDER-1234):
+  
+app/controllers/orders_controller.rb:4:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 19:45:53 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000111335bf0>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 404 Not Found in 4ms (ActiveRecord: 3.9ms | Allocations: 1188)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'={:id=>"SAP-ORDER-1234"}):
+  
+app/controllers/orders_controller.rb:4:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 19:46:34 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000110ff4248>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:5:in `index'
+Completed 404 Not Found in 4ms (ActiveRecord: 4.5ms | Allocations: 1141)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Order with 'id'={:id=>"SAP-ORDER-1234"}):
+  
+app/controllers/orders_controller.rb:5:in `index'
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+Started POST "/orders" for ::1 at 2025-05-02 19:47:59 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000110ff14a8>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 500 Internal Server Error in 7ms (Views: 0.1ms | ActiveRecord: 3.5ms | Allocations: 6947)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...); return".):
+  
+app/controllers/orders_controller.rb:10:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 19:48:15 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001114b5200>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 3.6ms | Allocations: 3713)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:48:27 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011119c640>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 3.1ms | Allocations: 3659)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:52:12 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000111276fe8>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:5:in `index'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 2.7ms | Allocations: 3674)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:52:24 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001104b74e8>, params: {"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1235"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:5:in `index'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 721)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:54:00 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001116d3ca8>, params: {"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1235"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 200 OK in 1ms (Views: 0.0ms | ActiveRecord: 1.7ms | Allocations: 994)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 19:54:16 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011135f0b8>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 3385)
+
+
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started POST "/orders" for ::1 at 2025-05-02 20:07:12 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011115d990>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 4.5ms | Allocations: 4002)
+
+
+  
+NoMethodError (undefined method `includes' for #<Order id: 1, external_id: "SAP-ORDER-1234", locked_at: nil, datetime: nil, created_at: "2025-05-02 14:15:02.985407000 +0000", updated_at: "2025-05-02 14:15:02.985407000 +0000", placed_at: "2025-04-17 12:00:00.000000000 +0000">):
+  
+app/controllers/orders_controller.rb:3:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 20:07:35 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001110ffd40>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 11.8ms | Allocations: 5060)
+
+
+  
+ActiveRecord::AssociationNotFoundError (Association named 'line_items' was not found on Order; perhaps you misspelled it?):
+  
+app/controllers/orders_controller.rb:3:in `index'
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddLineItemsAsForeignKey (20250502143918)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddLineItemsAsForeignKey (20250502143918)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "line_items" ADD "orders_id" bigint[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE INDEX "index_line_items_on_orders_id" ON "line_items" ("orders_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "orders" ADD "line_items_id" bigint[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE INDEX "index_orders_on_line_items_id" ON "orders" ("line_items_id")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mALTER TABLE "orders" ADD CONSTRAINT "fk_rails_0242aaffb9"
+FOREIGN KEY ("line_items_id")
+  REFERENCES "line_items" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250502143918') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5713880512270098105)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT "orders".* FROM "orders" ORDER BY "orders"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLineItem Load (0.6ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1 /* loading for pp */ LIMIT $2[0m  [["order_id", 1], ["LIMIT", 11]]
+Started POST "/orders" for ::1 at 2025-05-02 20:14:54 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011173df40>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 6.0ms | Allocations: 9159)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:5:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 20:15:34 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011187f340>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 5.6ms | Allocations: 4831)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:5:in `index'
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.3ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1 /* loading for pp */ LIMIT $2[0m  [["order_id", 1], ["LIMIT", 11]]
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1[0m  [["order_id", 1]]
+Started POST "/orders" for ::1 at 2025-05-02 20:17:10 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011189d340>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+  [1m[36mLineItem Load (0.1ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 8.0ms | Allocations: 6289)
+
+
+  
+NoMethodError (undefined method `<' for nil:NilClass):
+  
+app/controllers/orders_controller.rb:5:in `index'
+Started POST "/orders" for ::1 at 2025-05-02 20:18:27 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011189b540>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+  [1m[36mLineItem Load (0.1ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 204 No Content in 11ms (ActiveRecord: 7.3ms | Allocations: 6219)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 20:19:11 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x0000000111278de8>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 7.8ms | Allocations: 6221)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 20:19:20 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x00000001110b46b0>, params: {"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1235", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1235"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 875)
+
+
+Started POST "/orders" for ::1 at 2025-05-02 20:19:23 +0530
+Processing by OrdersController#index as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: index, request: #<ActionDispatch::Request:0x000000011105a480>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"index", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.1ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+  [1m[36mLineItem Load (0.2ms)[0m  [1m[34mSELECT "line_items".* FROM "line_items" WHERE "line_items"."order_id" = $1[0m  [["order_id", 1]]
+  ↳ app/controllers/orders_controller.rb:3:in `index'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1660)
+
+
+Started POST "/orders/SAP-ORDER-1234/lock" for ::1 at 2025-05-02 20:25:22 +0530
+Processing by OrdersController#lock as */*
+  Parameters: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "id"=>"SAP-ORDER-1234", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}}
+[31mUnpermitted parameter: :order. Context: { controller: OrdersController, action: lock, request: #<ActionDispatch::Request:0x00000001118bab48>, params: {"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z", "line_items"=>[{"sku"=>"SKU123", "quantity"=>10}, {"sku"=>"SKU456", "quantity"=>5}], "controller"=>"orders", "action"=>"lock", "id"=>"SAP-ORDER-1234", "order"=>{"external_id"=>"SAP-ORDER-1234", "placed_at"=>"2025-04-17T12:00:00Z"}} }[0m
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."external_id" = $1 LIMIT $2[0m  [["external_id", "SAP-ORDER-1234"], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:17:in `lock'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/orders_controller.rb:20:in `lock'
+  [1m[36mOrder Update (0.8ms)[0m  [1m[33mUPDATE "orders" SET "locked_at" = $1, "updated_at" = $2 WHERE "orders"."id" = $3[0m  [["locked_at", "2025-05-02T20:25:23+05:30"], ["updated_at", "2025-05-02 14:55:23.102284"], ["id", 1]]
+  ↳ app/controllers/orders_controller.rb:20:in `lock'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/orders_controller.rb:20:in `lock'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 4.1ms | Allocations: 6252)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

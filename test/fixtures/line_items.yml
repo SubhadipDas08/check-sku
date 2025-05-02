@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order: MyString
+  references,: MyString
+  sku: MyString
+  string,: MyString
+  quantity: MyString
+  number,: MyString
+  original: MyString
+  boolean: MyString
+
+two:
+  order: MyString
+  references,: MyString
+  sku: MyString
+  string,: MyString
+  quantity: MyString
+  number,: MyString
+  original: MyString
+  boolean: MyString
